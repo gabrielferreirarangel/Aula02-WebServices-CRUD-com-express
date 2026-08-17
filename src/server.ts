@@ -59,14 +59,12 @@ app.put('/jogos/:id', (req, res) => {
     if (!jogo) {
         return res.status(404).json({mensagem: "Produto não encontrado!"});
     }
-    
-    jogo.nome = nome
-    jogo.genero = genero
-    jogo.anoLancamento = anoLancamento
-
     if(jogo.nome == "" || jogo.genero == ""){
         return res.status(404).json({mensagem: "coloca as info ai pow"});
     }
+    jogo.nome = nome
+    jogo.genero = genero
+    jogo.anoLancamento = anoLancamento
 
     return res.status(200).json({mensagem: `Jogo ${id} atz com sucesso`, jogo})
 })
