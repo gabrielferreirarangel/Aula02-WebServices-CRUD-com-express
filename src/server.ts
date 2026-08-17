@@ -57,7 +57,7 @@ app.put('/jogos/:id', (req, res) => {
     const jogo = jogos.find(jogo => jogo.id === id);
 
     if (!jogo) {
-        return res.status(404).json({mensagem: "Produto não encontrado!"});
+        return res.status(404).json({mensagem: "jogo não encontrado!"});
     }
     if(jogo.nome == "" || jogo.genero == ""){
         return res.status(404).json({mensagem: "coloca as info ai pow"});
