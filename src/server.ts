@@ -30,7 +30,7 @@ app.post('/jogos', (req, res) =>{
     const {id, nome, genero, anoLancamento} = req.body
 
     if(!id || !nome || !genero || !anoLancamento){
-        return res.status(404).json({"mensagem": "Jogo nao encontrado"})}
+        return res.status(404).json({"mensagem": "precisa add id ou nome ou genero ou ano de lancamento"})}
 
     const novoJogo = {id, nome, genero, anoLancamento}
     jogos.push(novoJogo)
